@@ -28,13 +28,4 @@ public class UserData {
         }
         return Optional.empty();
     }
-
-    public void updateUser(String name, String surname, String password, List<OperationHistory> operationHistories) {
-        Optional<User> user = this.findByName(name);
-        User user1 = user.get();
-        user1.setName(name);
-        user1.setSurname(surname);
-        user1.setPassword(password);
-        user1.getOperationHistories(operationHistories);
-    }
 }

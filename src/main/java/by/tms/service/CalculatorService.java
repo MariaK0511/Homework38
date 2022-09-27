@@ -7,8 +7,9 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class CalculatorService {
+
     @Autowired
-    OperationHistory operationHistory;
+    private OperationHistory operationHistory;
 
     public double calculate(CalculatorData calculatorData) {
         double result = 0;
@@ -28,6 +29,5 @@ public class CalculatorService {
         }
         operationHistory.save(calculatorData);
         return result;
-
     }
 }

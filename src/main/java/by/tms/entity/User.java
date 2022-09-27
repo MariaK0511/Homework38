@@ -10,7 +10,6 @@ public class User {
     private String surname;
     private String password;
     private final List<CalculatorData> calculatorData = new ArrayList<>();
-    private final List<OperationHistory> operationHistories = new ArrayList<>();
 
     public User() {
     }
@@ -49,10 +48,6 @@ public class User {
         return calculatorData;
     }
 
-    public List<OperationHistory> getOperationHistories(List<OperationHistory> operationHistories) {
-        return this.operationHistories;
-    }
-
     @Override
     public String toString() {
         return "User{" +
@@ -60,7 +55,6 @@ public class User {
                 ", surname='" + surname + '\'' +
                 ", password='" + password + '\'' +
                 ", calculatorData=" + calculatorData +
-                ", operationHistories=" + operationHistories +
                 '}';
     }
 }

@@ -1,8 +1,11 @@
 package by.tms.service;
 
 
+import by.tms.entity.CalculatorData;
 import by.tms.entity.User;
+import by.tms.storage.OperationHistory;
 import by.tms.storage.UserData;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
@@ -11,9 +14,8 @@ import java.util.Optional;
 
 @Component
 public class UserService {
-    UserData userData;
-
-    private static final List<User> users = new ArrayList<>();
+    @Autowired
+   private UserData userData;
 
     public User saveUser(User user) {
         userData.saveUser(user);
@@ -25,7 +27,9 @@ public class UserService {
         return findUser(user);
     }
 
-    public void updateUserInf(User user) {
-        userData.updateUser(user.getName(), user.getSurname(), user.getPassword(), user.getOperationHistories(List.of()));
+    public List<CalculatorData> addOperationHistory(User user, CalculatorData calculatorData){
+        user.getCalculatorData().add(calculatorData);
+        return user.getCalculatorData();
+
     }
 }

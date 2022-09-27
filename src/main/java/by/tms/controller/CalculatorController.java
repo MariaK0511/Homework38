@@ -1,6 +1,5 @@
 package by.tms.controller;
 
-
 import by.tms.entity.CalculatorData;
 import by.tms.entity.User;
 import by.tms.service.CalculatorService;
@@ -81,10 +80,12 @@ public class CalculatorController {
     }
 
 
-
-
-
-
+    @GetMapping("/info") //localhost:8080/calc/operation
+    public String userInfo(Map<String, Object> model) {
+        User user = new User();
+        model.put("user", userService.addOperationHistory(user, new CalculatorData()));
+        return "info";
+    }
 
 
 //
