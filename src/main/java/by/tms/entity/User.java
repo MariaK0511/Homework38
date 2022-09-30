@@ -2,12 +2,17 @@ package by.tms.entity;
 
 import by.tms.storage.OperationHistory;
 
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
 import java.util.List;
 
 public class User {
+
     private String name;
+
     private String surname;
+
     private String password;
     private final List<CalculatorData> calculatorData = new ArrayList<>();
 

@@ -28,6 +28,7 @@ public class CalculatorService {
                 break;
         }
         operationHistory.save(calculatorData);
+
         return result;
     }
 }

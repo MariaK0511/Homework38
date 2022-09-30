@@ -24,12 +24,11 @@ public class UserService {
 
     public Optional<User> findUser(User user) {
         userData.findByName(user.getName());
-        return findUser(user);
+        return Optional.of(user);
     }
 
     public List<CalculatorData> addOperationHistory(User user, CalculatorData calculatorData){
         user.getCalculatorData().add(calculatorData);
         return user.getCalculatorData();
-
     }
 }

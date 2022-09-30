@@ -27,6 +27,7 @@
         <td>Password</td>
         <td>${password}</td>
     </tr>
+    <p>${result}</p>
 </table>
 </body>
 </html>

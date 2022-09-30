@@ -11,10 +11,9 @@
     <title>Calculator</title>
 </head>
 <body>
-<%--<h1>Calculator ${num1} ${num2} ${operation} ${calculate}</h1>--%>
-<form action="/calc/operation" method ="post">
-    <input type="number" name="num1" placeholder="Num3">
-    <input type="number" name="num2" placeholder="Num2">
+-<form action="/calc/operation" method="post">
+    <input type="number" name="num1" placeholder="Num 1">
+    <input type="number" name="num2" placeholder="Num 2">
     <input type="text" name="operation" placeholder="Operation">
     <button>Submit</button>
 </form>

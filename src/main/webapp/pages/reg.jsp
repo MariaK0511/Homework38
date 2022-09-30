@@ -10,31 +10,14 @@
 <head>
     <title>Registration</title>
 </head>
+
 <body>
 <h2>Registration</h2>
-<form  action="/calc/reg" method ="post">
-<table>
-    <tr>
-        <td>Name</td>
-        <td><label>
-            <input type="text" name="name" placeholder="Name">
-        </label></td>
-    </tr>
-    <tr>
-    <tr>
-        <td>Surname</td>
-        <td><label>
-            <input type="text" name="surname" placeholder="Surname">
-        </label></td>
-    </tr>
-    <tr>
-        <td>Password</td>
-        <td><label>
-            <input type="text" name="password" placeholder="Password">
-        </label></td>
-    </tr>
-</table>
-<button>Submit</button>
+<form action="/calc/reg" method="post">
+	<input type="text" name="name" placeholder="Name">
+	<input type="text" name="surname" placeholder="Surname">
+	<input type="text" name="password" placeholder="Password">
+	<button>Submit</button>
 </form>
 <p>${user}</p>
 </body>
