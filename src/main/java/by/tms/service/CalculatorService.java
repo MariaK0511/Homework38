@@ -11,7 +11,7 @@ public class CalculatorService {
     @Autowired
     private OperationHistory operationHistory;
 
-    public double calculate(CalculatorData calculatorData) {
+    public void  calculate(CalculatorData calculatorData) {
         double result = 0;
         switch (calculatorData.getOperation()) {
             case "sum":
@@ -27,8 +27,7 @@ public class CalculatorService {
                 result = calculatorData.getNum1() / calculatorData.getNum2();
                 break;
         }
+        calculatorData.setResult(result);
         operationHistory.save(calculatorData);
-
-        return result;
     }
 }

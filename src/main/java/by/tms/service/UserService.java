@@ -22,9 +22,9 @@ public class UserService {
         return user;
     }
 
-    public Optional<User> findUser(User user) {
-        userData.findByName(user.getName());
-        return Optional.of(user);
+    public User findUser(User user) {
+        Optional<User> userByName = userData.findByName(user.getName());
+        return userByName.orElse(null);
     }
 
     public List<CalculatorData> addOperationHistory(User user, CalculatorData calculatorData){

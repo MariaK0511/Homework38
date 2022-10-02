@@ -22,7 +22,7 @@ public class UserData {
 
     public Optional<User> findByName(String name) {
         for (User user : users) {
-            if (user.getName() == name) {
+            if (user.getName().equals(name)) {
                 return Optional.of(user);
             }
         }
