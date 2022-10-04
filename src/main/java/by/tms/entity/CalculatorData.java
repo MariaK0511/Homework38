@@ -1,14 +1,15 @@
 package by.tms.entity;
 
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.PositiveOrZero;
 
 public class CalculatorData {
 
-    @NotBlank(message = "num1 must not be empty")
+    @NotEmpty(message = "num1 must not be empty")
     @PositiveOrZero
     private double num1;
-    @NotBlank(message = "num2 must not be empty")
+    @NotEmpty(message = "num2 must not be empty")
     @PositiveOrZero
     private double num2;
     @NotBlank(message = "operation must not be empty")

@@ -64,22 +64,19 @@ public class CalculatorController {
     @PostMapping("/operation") //localhost:8080/calc/operation
     public String calculator(@Valid @ModelAttribute("operation") CalculatorData calculatorData,
                              BindingResult bindingResult,
-                             HttpSession httpSession,
-                             Model model) {
+                             HttpSession httpSession) {
         if (bindingResult.hasErrors()) {
-            return "operation";
-        } else {
-            User user = (User) httpSession.getAttribute("user");
-            User user1 = userService.findUser(user);
-            calculatorService.calculate(calculatorData);
-          //  model.addAttribute("operation", calculatorData);
-            userService.addOperationHistory(user1, calculatorData);
-            return "redirect:/calc/info";
+            throw new RuntimeException("Incorrect data");
         }
+        User user = (User) httpSession.getAttribute("user");
+        User user1 = userService.findUser(user);
+        calculatorService.calculate(calculatorData);
+        userService.addOperationHistory(user1, calculatorData);
+        return "redirect:/calc/info";
     }
 
     @RequestMapping("info") //localhost:8080/calc/info
-    public String userInfo( Model model, HttpSession httpSession) {
+    public String userInfo(Model model, HttpSession httpSession) {
         User user2 = (User) httpSession.getAttribute("user");
         User user1 = userService.findUser(user2);
         model.addAttribute("userOperationHistory", user1);
