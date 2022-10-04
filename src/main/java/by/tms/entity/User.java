@@ -3,6 +3,7 @@ package by.tms.entity;
 import by.tms.storage.OperationHistory;
 
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import java.util.ArrayList;
@@ -10,15 +11,18 @@ import java.util.List;
 
 public class User {
 
-    @NotBlank(message = "Name must not be empty")
+    @NotBlank
+    @NotEmpty(message = "Name must not be empty")
     @Size(min = 2, max = 20)
     private String name;
 
-    @NotBlank(message = "Surname must not be empty")
+    @NotBlank
+    @NotEmpty(message = "Name must not be empty")
     @Size(min = 2,max = 20)
     private String surname;
 
-    @NotBlank(message = "Password must not be empty")
+    @NotBlank
+    @NotEmpty(message = "Name must not be empty")
     @Size(min = 3, max = 20)
     private String password;
     private final List<CalculatorData> calculatorData = new ArrayList<>();
