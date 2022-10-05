@@ -16,10 +16,6 @@ public class UserData {
         return user;
     }
 
-    List<User> getUsers() {
-        return users;
-    }
-
     public Optional<User> findByName(String name) {
         for (User user : users) {
             if (user.getName().equals(name)) {
