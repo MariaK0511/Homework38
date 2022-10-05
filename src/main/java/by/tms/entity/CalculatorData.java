@@ -8,12 +8,10 @@ import javax.validation.constraints.PositiveOrZero;
 public class CalculatorData {
 
     @NotNull(message = "num1 must not be empty")
-    @PositiveOrZero
     private double num1;
     @NotNull(message = "num2 must not be empty")
-    @PositiveOrZero
     private double num2;
-    @NotNull(message = "operation must not be empty")
+    @NotBlank(message = "operation must not be empty")
     private String operation;
     private double result;
 

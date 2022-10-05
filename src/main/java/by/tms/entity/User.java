@@ -11,18 +11,15 @@ import java.util.List;
 
 public class User {
 
-    @NotBlank
-    @NotEmpty(message = "Name must not be empty")
+    @NotBlank(message = "Name must not be empty")
     @Size(min = 2, max = 20)
     private String name;
 
-    @NotBlank
-    @NotEmpty(message = "Name must not be empty")
-    @Size(min = 2,max = 20)
+    @NotBlank(message = "Surname must not be empty")
+    @Size(min = 2, max = 20)
     private String surname;
 
-    @NotBlank
-    @NotEmpty(message = "Name must not be empty")
+    @NotBlank(message = "Password must not be empty")
     @Size(min = 3, max = 20)
     private String password;
     private final List<CalculatorData> calculatorData = new ArrayList<>();

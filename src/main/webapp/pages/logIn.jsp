@@ -32,7 +32,7 @@
 <%--<form action="/calc/logIn" method ="post">--%>
 <%--    <input type="text" name="name" placeholder="Name">--%>
 <%--    <input type="text" name="surname" placeholder="Surname">--%>
-<%--    <input type="text" name="password" placeholder="Password">--%>
+<%--    <input type="password" name="password" placeholder="Password">--%>
 <%--    <button>Submit</button>--%>
 <%--</form>--%>
 </body>
